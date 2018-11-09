@@ -3,6 +3,10 @@ import { capitalize } from '../../utils/StringUtils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './product-page.css';
 
+
+const Option = ({ children }) => {
+	return <div className="option">{children}</div>;
+};
 const Stars = ({ value }) => {
 	const stars = [];
 	for (let i = 0; i < 5; i++) {
@@ -31,7 +35,7 @@ export default class ProductPage extends Component {
 			(
 				<ul key={idx}>
 					{capitalize(key)}
-					{options[ key ].map((item, idx) => <span key={idx}>{item}</span>)}
+					{options[ key ].map((item, idx) => <Option key={idx}>{item}</Option>)}
 				</ul>
 			)
 		);
