@@ -16,7 +16,12 @@ main {
 	border: 1px solid grey;
 	padding: 1rem;
 	margin: 1rem;
+	border-radius: 2px;
 	transition: all 150ms ease-in;
+}
+
+.option.selected {
+	border: 2px solid black;
 }
 
 .option:hover {

@@ -7,14 +7,33 @@ import './product-page.css';
 
 
 export default class ProductPage extends Component {
+	constructor(props) {
+		super(props);
+		this.selectOption = this.selectOption.bind(this);
+	}
+	selectOption(key, item) {
+		const { selectOption } = this.props;
+		selectOption(key, item);
+	}
 	renderOptions() {
-		const { product: { info: { options = {} } } } = this.props;
+		const { product: { info: { options = {} }, selectedOptions = {} } } = this.props;
+
 		return Object.keys(options).map((key, idx) =>
 			(
-				<ul key={idx}>
+				<div key={idx}>
 					{capitalize(key)}
-					{options[ key ].map((item, idx) => <Option key={idx}>{item}</Option>)}
-				</ul>
+					{options[ key ].map((item, idx) =>
+						(
+							<Option
+								key={idx}
+								selected={selectedOptions[ key ] === item}
+								onClick={this.selectOption.bind(this, key, item)}
+							>
+								{item}
+							</Option>
+						)
+					)}
+				</div>
 			)
 		);
 

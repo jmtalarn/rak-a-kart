@@ -1,8 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const Option = ({ children }) => {
-	return <div className="option">{children}</div>;
+export const Option = ({ children, selected, onClick }) => {
+	return (
+		<div
+			className={`option${selected ? ' selected' : ''}`}
+			onClick={onClick}
+		>
+			{children}
+		</div>
+	);
 };
 export const Stars = ({ value }) => {
 	const stars = [];

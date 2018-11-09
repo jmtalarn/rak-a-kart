@@ -12,3 +12,12 @@ export function selectProduct(id) {
 		);
 	};
 }
+
+export function selectOption(key, item) {
+	return {
+		type: ACTION.SELECT_OPTION,
+		key,
+		item,
+	};
+
+};
