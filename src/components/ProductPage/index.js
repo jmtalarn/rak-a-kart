@@ -12,7 +12,6 @@ const Stars = ({ value }) => {
 	for (let i = 0; i < 5; i++) {
 
 		if (i < value) {
-			console.log(i, value, "solid");
 			stars.push(<FontAwesomeIcon key={i} icon={[ "fas", "star" ]} />);
 		} else {
 			console.log(i, value, "regular");
@@ -24,7 +23,7 @@ const Stars = ({ value }) => {
 const Reviews = ({ value }) => {
 	return (
 		<div className="reviews">
-			{`${value} reviews`}
+			({`${value} reviews`})
 		</div>
 	);
 };
@@ -47,8 +46,10 @@ export default class ProductPage extends Component {
 			<main>
 				<img src={product.image} alt={`A visual represetation of the product ${product.name}`} />
 				<h2>{product.name}</h2>
-				<Stars value={product.stars} />
-				<Reviews value={product.reviews} />
+				<div className="product-reviews">
+					<Stars value={product.stars} />
+					<Reviews value={product.reviews} />
+				</div>
 				{this.renderOptions()}
 				<p>{product.description}</p>
 			</main>
