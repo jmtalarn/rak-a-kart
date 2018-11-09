@@ -1,0 +1,9 @@
+.App-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.App-header .App-logo {
+	height: 2rem;
+}
