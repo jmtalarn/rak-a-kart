@@ -1,59 +1,19 @@
-import React, { Component } from 'react';
-import { capitalize } from '../../utils/StringUtils';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './product-page.css';
+import ProductPage from './product-page';
+import { connect } from 'react-redux';
 
+const ProductPageState = function (state, props) {
+	const { product } = state;
 
-const Option = ({ children }) => {
-	return <div className="option">{children}</div>;
+	return {
+		product
+	};
 };
-const Stars = ({ value }) => {
-	const stars = [];
-	for (let i = 0; i < 5; i++) {
 
-		if (i < value) {
-			stars.push(<FontAwesomeIcon key={i} icon={[ "fas", "star" ]} />);
-		} else {
-			console.log(i, value, "regular");
-			stars.push(<FontAwesomeIcon key={i} icon={[ "far", "star" ]} />);
-		}
-	}
-	return <div className="stars">{stars}</div>;
-};
-const Reviews = ({ value }) => {
-	return (
-		<div className="reviews">
-			({`${value} reviews`})
-		</div>
-	);
-};
-export default class ProductPage extends Component {
-	renderOptions() {
-		const { product: { options } } = this.props;
-		return Object.keys(options).map((key, idx) =>
-			(
-				<ul key={idx}>
-					{capitalize(key)}
-					{options[ key ].map((item, idx) => <Option key={idx}>{item}</Option>)}
-				</ul>
-			)
-		);
+const ProductPageDispatch = null;
 
-	}
-	render() {
-		const { product } = this.props;
-		return (
-			<main>
-				<img src={product.image} alt={`A visual represetation of the product ${product.name}`} />
-				<h2>{product.name}</h2>
-				<div className="product-reviews">
-					<Stars value={product.stars} />
-					<Reviews value={product.reviews} />
-				</div>
-				{this.renderOptions()}
-				<p>{product.description}</p>
-			</main>
-		);
-	}
-}
+var ProductPageContainer = connect(
+	ProductPageState,
+	ProductPageDispatch
+)(ProductPage);
 
+export default ProductPageContainer;

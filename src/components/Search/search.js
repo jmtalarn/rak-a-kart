@@ -13,8 +13,7 @@ export default class Search extends Component {
 
 	selectProduct(selectedOption) {
 		const { selectProduct } = this.props;
-		selectProduct(selectedOption);
-		console.log(`Option selected:`, selectedOption);
+		selectProduct(selectedOption.value);
 	}
 
 	render() {
