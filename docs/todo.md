@@ -1,6 +1,8 @@
 # TODO
 ## Actions identified
 ### On Product page
+* [ ] Search for product
+* [ ] Show variant possibilities
 * [ ] Add product to Cart
 ### On Cart
 * [ ] Toggle cart
