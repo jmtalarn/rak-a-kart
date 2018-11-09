@@ -4,10 +4,12 @@
 * [ ] Search for product
 * [ ] Show variant possibilities
 * [ ] Add product to Cart
+* [ ] Buy now
 ### On Cart
 * [ ] Toggle cart
 * [ ] Show order summary
 * [ ] Show info form
 * [ ] Show payment info
 * [ ] Sent payment
+* [ ] Show Thank you!
 
