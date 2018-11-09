@@ -1,14 +1,8 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
-	faShoppingCart, faTruck, faRetweet, faClock, faCreditCard, faAddressCard, faClipboardList, faSearch
+	faShoppingCart, faTruck, faRetweet, faClock, faCreditCard, faAddressCard, faClipboardList, faSearch, faStar
 } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 
-library.add(faShoppingCart);
-library.add(faTruck);
-library.add(faRetweet);
-library.add(faClock);
-library.add(faCreditCard);
-library.add(faAddressCard);
-library.add(faClipboardList);
-library.add(faSearch);
+library.add(faShoppingCart, faTruck, faRetweet, faClock, faCreditCard, faAddressCard, faClipboardList, faSearch, faStar, faStarEmpty);
