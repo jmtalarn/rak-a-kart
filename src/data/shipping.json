@@ -1,0 +1,22 @@
+{
+  "Spain": {
+    "shipping": 2.5,
+    "currency": "EUR"
+  },
+  "Japan": {
+    "shipping": 7.5,
+    "currency": "EUR"
+  },
+  "USA": {
+    "shipping": 7,
+    "currency": "EUR"
+  },
+  "France": {
+    "shipping": 3,
+    "currency": "EUR"
+  },
+  "UK": {
+    "shipping": 3,
+    "currency": "GBP"
+  }
+}
