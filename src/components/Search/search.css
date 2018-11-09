@@ -1,0 +1,20 @@
+.search {
+	width: 100%;
+	max-width: 50rem;
+	display: flex;
+	align-items: center;
+}
+
+.search .search-icon {
+	margin-right: 1rem;
+}
+
+
+
+.search .search-input {
+	/* line-height: 2rem;
+	padding: 4px; */
+	width: calc(100% - 3rem);
+	/* border-radius: 4px;
+	border: 1px solid lightgrey; */
+}
