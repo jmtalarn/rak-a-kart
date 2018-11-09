@@ -17,6 +17,13 @@ const Stars = ({ value }) => {
 	}
 	return <div className="stars">{stars}</div>;
 };
+const Reviews = ({ value }) => {
+	return (
+		<div className="reviews">
+			{`${value} reviews`}
+		</div>
+	);
+};
 export default class ProductPage extends Component {
 	renderOptions() {
 		const { product: { options } } = this.props;
@@ -37,7 +44,7 @@ export default class ProductPage extends Component {
 				<img src={product.image} alt={`A visual represetation of the product ${product.name}`} />
 				<h2>{product.name}</h2>
 				<Stars value={product.stars} />
-				<p>{product.reviews}</p>
+				<Reviews value={product.reviews} />
 				{this.renderOptions()}
 				<p>{product.description}</p>
 			</main>
