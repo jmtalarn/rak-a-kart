@@ -64,9 +64,7 @@ export default class ProductPage extends Component {
 						{info.description}
 					</p>
 
-					<div className="product-price">
-						<PriceBox value={info.price} />
-					</div>
+					<PriceBox value={info.price} />
 
 				</article>
 			)

@@ -39,11 +39,12 @@ export const PriceBox = ({ value }) => {
 export const Option = ({ children, selected, onClick }) => {
 	return (
 		<div
+			tabIndex={0}
 			className={`option${selected ? ' selected' : ''}`}
 			onClick={onClick}
 		>
 			{children}
-		</div>
+		</div >
 	);
 };
 export const Stars = ({ value }) => {
