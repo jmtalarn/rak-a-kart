@@ -9,11 +9,18 @@
 .summary-product {
 	display: grid;
 	grid-template-areas:
-		"image title price"
-		"image options price";
+		"image""title""options""price";
 	grid-gap: 10px;
 	padding: 2rem;
 	transition: filter 200ms ease;
+}
+
+@media screen and (min-width: 490px) {
+	.summary-product {
+		grid-template-areas: "image title price"
+			"image options price";
+	}
+
 }
 
 .summary-product-title {
@@ -25,6 +32,7 @@
 	width: 10rem;
 	height: 10rem;
 	grid-area: image;
+	margin: 0 auto;
 }
 
 .summary-product-option {
@@ -75,4 +83,24 @@
 	align-items: center;
 	justify-content: center;
 	transition: all 200ms ease;
+}
+
+.shipping-costs,
+.total-price {
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 1rem;
+}
+
+.shipping-costs .label,
+.total-price .label {
+	font-weight: bold;
+}
+
+.shipping-costs .value,
+.total-price .value {
+	font-size: 1.5rem;
+	font-weight: bold;
 }

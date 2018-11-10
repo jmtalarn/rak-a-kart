@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 /*import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';*/
-import { CartSummary } from './cart-components';
+import { CartSummary, ShippingCosts, TotalPrice } from './cart-components';
 import Tabs from '../Tabs';
 import './cart.css';
 
@@ -29,7 +29,11 @@ export default class Cart extends Component {
 					info={null}
 					payment={null}
 				/>
-
+				<hr />
+				<ShippingCosts />
+				<hr />
+				<TotalPrice items={items} />
+				<hr />
 			</div>
 		);
 	}

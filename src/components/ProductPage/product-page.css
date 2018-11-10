@@ -28,6 +28,11 @@ article {
 	text-align: center;
 }
 
+.product-image img {
+	width: 100%;
+}
+
+
 .product-info-title {
 	grid-area: title
 }

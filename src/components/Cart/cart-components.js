@@ -50,7 +50,34 @@ export const CartSummary = ({ items, removeProduct }) => {
 					removeProduct={removeProduct}
 				/>
 			)}
-			<hr />
+		</div>
+
+	);
+};
+
+export const ShippingCosts = () => {
+
+	return (
+		<div className="shipping-costs">
+			<div className="label">Shipping cost</div>
+			<div className="value">0 €</div>
+		</div>
+
+	);
+};
+
+
+export const TotalPrice = ({ items }) => {
+	let value = 0;
+	for (let i = 0; i < items.length; i++) {
+		value += parseFloat(items[ i ].price);
+	}
+	value = value.toFixed(2);
+
+	return (
+		<div className="total-price">
+			<div className="label">Total cost</div>
+			<div className="value">{value} €</div>
 		</div>
 
 	);
