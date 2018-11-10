@@ -16,7 +16,7 @@ export default class CartSlip extends Component {
 		toggleCart();
 	}
 	render() {
-		const { open } = this.props;
+		const { open, children } = this.props;
 		console.log('open', this.props);
 		return (
 			<div className={`cart-slip${open ? ' open' : ''}`}>
@@ -28,8 +28,7 @@ export default class CartSlip extends Component {
 					size="4x"
 				/>
 				<div className='cart-slip-content'>
-					<h1>Cart</h1>
-					<p>Here will appear your cart content ready to checkout</p>
+					{children}
 				</div>
 			</div>
 		);

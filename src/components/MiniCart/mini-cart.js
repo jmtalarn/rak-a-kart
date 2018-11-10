@@ -17,6 +17,7 @@ export default class MiniCart extends Component {
 	}
 
 	render() {
+		const { size } = this.props;
 
 		return (
 			<div
@@ -25,6 +26,9 @@ export default class MiniCart extends Component {
 				onClick={this.toggleCart}
 			>
 				<FontAwesomeIcon icon="shopping-cart" />
+				<span className="shopping-cart-count">
+					{size ? (`${size} items`) : null}
+				</span>
 			</div>
 		);
 	}

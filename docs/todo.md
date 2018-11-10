@@ -3,8 +3,8 @@
 ### On Product page
 * [X] Search for product
 * [X] Show variant possibilities
-* [ ] Add product to Cart
-* [ ] Buy now
+* [X] Add product to Cart
+* [X] Buy now
 ### On Cart
 * [X] Toggle cart
 * [ ] Show order summary

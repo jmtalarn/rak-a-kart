@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import ProductPage from './components/ProductPage';
 import CartSlip from './components/CartSlip';
+import Cart from './components/Cart/cart';
 
 class App extends Component {
 	render() {
@@ -11,7 +12,9 @@ class App extends Component {
 			<div className="App">
 				<Header />
 				<ProductPage />
-				<CartSlip />
+				<CartSlip>
+					<Cart />
+				</CartSlip>
 			</div>
 		);
 	}
