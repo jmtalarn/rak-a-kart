@@ -1,0 +1,85 @@
+.tabs {
+	top: -1.25rem;
+	position: relative;
+}
+
+
+.tabs .select-tab button {
+	border-radius: 50%;
+	border: 1px solid dimgray;
+	background-color: white;
+}
+
+.tabs .select-tab button:hover {
+	background-color: lightblue;
+}
+
+
+.tabs .select-tab,
+.tabs .tab-names {
+	display: flex;
+	width: 60%;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.tabs .tab-names>div {
+	text-transform: uppercase;
+	font-size: .8rem;
+	font-weight: 900;
+	color: dimgray;
+	margin: 1rem 0;
+}
+
+.tabs .select-tab .tab-button.selected {
+	background-color: grey;
+}
+
+.tabs .tab-names .tab-name {
+	visibility: hidden;
+}
+
+.tabs .tab-names .tab-name.selected {
+	visibility: visible;
+}
+
+.tabs .tab-content .tab-content-item {
+	display: none;
+}
+
+.tabs .tab-content .tab-content-item.selected {
+	display: block;
+}
+
+.tabs .stepper {
+	width: 80%;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: space-around;
+	display: flex;
+}
+
+.tabs button.prev-step {
+	width: 15%;
+}
+
+.tabs button.next-step {
+	width: 80%;
+	background-color: grey;
+}
+
+.tabs button.step {
+	border-radius: 30px;
+	display: inline-block;
+	margin: 1rem 0;
+	padding: 1.5rem;
+	font-family: 'Montserrat', sans-serif;
+	border: 1px solid dimgray;
+	transition: all 150ms ease-in;
+}
+
+.tabs button.step:hover {
+	background-color: lightblue;
+	border: 1px solid black;
+}

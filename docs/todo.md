@@ -7,7 +7,7 @@
 * [X] Buy now
 ### On Cart
 * [X] Toggle cart
-* [ ] Show order summary
+* [X] Show order summary
 * [ ] Show info form
 * [ ] Show payment info
 * [ ] Sent payment

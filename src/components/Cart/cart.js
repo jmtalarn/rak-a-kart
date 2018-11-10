@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 /*import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';*/
 import { CartSummary } from './cart-components';
+import Tabs from '../Tabs';
 import './cart.css';
 
 export default class Cart extends Component {
@@ -14,15 +15,21 @@ export default class Cart extends Component {
 	}
 	render() {
 		const { items } = this.props;
-		console.log('Cart ->', items);
+
+		const summary = <CartSummary
+			items={items}
+			removeProduct={this.removeProduct}
+		/>;
 		return (
 			<div class="cart">
 				<h2>Your order </h2>
 				<hr />
-				<CartSummary
-					items={items}
-					removeProduct={this.removeProduct}
+				<Tabs
+					summary={summary}
+					info={null}
+					payment={null}
 				/>
+
 			</div>
 		);
 	}
