@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../logo.png';
 import './header.css';
 import Search from '../Search';

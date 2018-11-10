@@ -21,7 +21,7 @@ export default class MiniCart extends Component {
 		return (
 			<div
 				tabIndex={0}
-				className="minicart"
+				className="mini-cart"
 				onClick={this.toggleCart}
 			>
 				<FontAwesomeIcon icon="shopping-cart" />
