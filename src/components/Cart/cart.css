@@ -13,7 +13,7 @@
 		"image options price";
 	grid-gap: 10px;
 	padding: 2rem;
-
+	transition: filter 200ms ease;
 }
 
 .summary-product-title {
@@ -49,4 +49,30 @@
 	font-weight: bold;
 	font-size: 2rem;
 	grid-area: price;
+}
+
+.summary-product-wrapper {
+	position: relative;
+}
+
+.summary-product-wrapper:hover .summary-product-delete-overlay {
+	display: flex;
+	z-index: 2;
+}
+
+.summary-product-wrapper:hover .summary-product {
+	filter: blur(5px);
+}
+
+.summary-product-delete-overlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 0, 0, .3);
+	color: red;
+	font-size: 3rem;
+	align-items: center;
+	justify-content: center;
+	transition: all 200ms ease;
 }

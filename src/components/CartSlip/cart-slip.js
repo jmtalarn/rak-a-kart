@@ -20,16 +20,19 @@ export default class CartSlip extends Component {
 		console.log('open', this.props);
 		return (
 			<div className={`cart-slip${open ? ' open' : ''}`}>
-				<FontAwesomeIcon
-					tabIndex={0}
-					onClick={this.toggleCart}
+				<button
 					className="close-icon"
-					icon="times"
-					size="4x"
-				/>
+					onClick={this.toggleCart}
+				>
+					<FontAwesomeIcon
+						icon="times"
+						size="4x"
+					/>
+				</button>
 				<div className='cart-slip-content'>
 					{children}
 				</div>
+
 			</div>
 		);
 	}

@@ -21,15 +21,18 @@ export default class MiniCart extends Component {
 
 		return (
 			<div
-				tabIndex={0}
 				className="mini-cart"
-				onClick={this.toggleCart}
 			>
-				<FontAwesomeIcon icon="shopping-cart" />
-				<span className="shopping-cart-count">
-					{size ? (`${size} items`) : null}
-				</span>
-			</div>
+				<button
+					onClick={this.toggleCart}
+				>
+					<FontAwesomeIcon icon="shopping-cart" />
+					<span className="shopping-cart-count">
+						&nbsp;
+						{size ? (`${size} items`) : null}
+					</span>
+				</button>
+			</div >
 		);
 	}
 }

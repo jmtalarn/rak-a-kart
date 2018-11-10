@@ -21,6 +21,13 @@ export function addProduct(id, selectedOptions) {
 		}
 		);
 	};
-
-
 }
+export function removeProduct(id) {
+
+	return {
+		type: ACTION.REMOVE_PRODUCT,
+		id,
+	};
+
+};
+

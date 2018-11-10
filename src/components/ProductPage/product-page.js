@@ -29,24 +29,26 @@ export default class ProductPage extends Component {
 		const { product: { info: { options }, selectedOptions = {} } } = this.props;
 		return (
 			<div className="product-options">
-				{Object.keys(options).map((key, idx) =>
-					(
-						<div key={idx} >
-							{capitalize(key)}
-							{options[ key ].map((item, idx) =>
-								(
-									<Option
-										key={idx}
-										selected={selectedOptions[ key ] === item}
-										onClick={this.selectOption.bind(this, key, item)}
-									>
-										{item}
-									</Option>
-								)
-							)}
-						</div>
-					)
-				)}
+				{Object.keys(options).length ?
+					Object.keys(options).map((key, idx) =>
+						(options[ key ].length ?
+							<div key={idx} >
+								{capitalize(key)}
+								{options[ key ].map((item, idx) =>
+									(
+										<Option
+											key={idx}
+											selected={selectedOptions[ key ] === item}
+											onClick={this.selectOption.bind(this, key, item)}
+										>
+											{item}
+										</Option>
+									)
+								)}
+							</div>
+							: null)
+					) : null
+				}
 			</div>
 		);
 

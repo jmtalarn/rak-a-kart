@@ -19,6 +19,12 @@ function cartReducer(state = initialState, action) {
 				state,
 				{ items: [ ...state.items, action.product ] }
 			);
+		case ActionTypes.REMOVE_PRODUCT:
+			return Object.assign(
+				{},
+				state,
+				{ items: state.items.filter(item => item.id !== action.id) }
+			);
 		default:
 			return state;
 	}

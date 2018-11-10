@@ -39,9 +39,4 @@
 	right: 0;
 	z-index: 2;
 	margin: 1rem;
-	transition: all 150ms ease-in;
-}
-
-.cart-slip .close-icon:hover {
-	background-color: lightblue;
 }

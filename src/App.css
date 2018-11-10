@@ -1,1 +1,10 @@
+button,
+submit {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
 
+button:hover {
+	box-shadow: 2px 2px 5px lightblue, -2px -2px 5px lightblue;
+}
