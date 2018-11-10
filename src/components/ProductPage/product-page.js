@@ -10,14 +10,18 @@ export default class ProductPage extends Component {
 	constructor(props) {
 		super(props);
 		this.selectOption = this.selectOption.bind(this);
+		this.addToCart = this.addToCart.bind(this);
 	}
 	selectOption(key, item) {
 		const { selectOption } = this.props;
 		selectOption(key, item);
 	}
+	addToCart() {
+		const { product: { info: { id }, selectedOptions = {} }, addProduct } = this.props;
+		addProduct(id, selectedOptions);
+	}
 	renderOptions() {
-		const { product: { info: { options = {} }, selectedOptions = {} } } = this.props;
-
+		const { product: { info: { options }, selectedOptions = {} } } = this.props;
 		return (
 			<div className="product-options">
 				{Object.keys(options).map((key, idx) =>
@@ -64,7 +68,7 @@ export default class ProductPage extends Component {
 						{info.description}
 					</p>
 
-					<PriceBox value={info.price} />
+					<PriceBox value={info.price} addToCart={this.addToCart} />
 
 				</article>
 			)

@@ -13,7 +13,12 @@ function cartReducer(state = initialState, action) {
 				state,
 				{ open: !state.open }
 			);
-
+		case ActionTypes.ADD_PRODUCT:
+			return Object.assign(
+				{},
+				state,
+				{ items: [ ...state.items, action.product ] }
+			);
 		default:
 			return state;
 	}

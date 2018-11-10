@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-export const PriceBox = ({ value }) => {
+export const PriceBox = ({ value, addToCart }) => {
 	return (
 		<div className="price-box">
 			<div className="price-box-value">
@@ -28,8 +28,17 @@ export const PriceBox = ({ value }) => {
 				<div className="price-box-superpoints-promo">Double Super Points this month</div>
 			</div>
 			<div className="price-box-actions">
-				<button className="price-box-buynow">Buy now</button>
-				<button className="price-box-addtocart">Add to cart</button>
+				<button
+					className="price-box-buynow"
+				>
+					Buy now
+				</button>
+				<button
+					className="price-box-addtocart"
+					onClick={() => addToCart()}
+				>
+					Add to cart
+				</button>
 			</div>
 		</div>
 	);
