@@ -27,3 +27,67 @@ main {
 .option:hover {
 	background-color: lightblue;
 }
+
+.price-box {
+	background-color: lightgray;
+	padding: 1rem;
+}
+
+.price-box-value h2 {
+	margin: 0;
+}
+
+.price-box-value small {
+	color: dimgray
+}
+
+ul.price-box-advantages {
+	list-style: none;
+	padding: 0;
+	color: #2d2d2d;
+}
+
+ul.price-box-advantages li {
+	margin: .5rem 0;
+}
+
+.price-box-superpoints {
+	margin: 1rem 0;
+}
+
+.price-box-superpoints-count {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+}
+
+.price-box-superpoints-count .icon {
+	margin-right: 1rem;
+}
+
+.price-box-superpoints-promo {
+	margin-left: 2rem;
+	color: dimgray;
+	font-weight: bold;
+}
+
+.price-box-actions button {
+	border-radius: 30px;
+	display: block;
+	margin: 1rem 0;
+	width: 100%;
+	padding: 1.5rem;
+	font-family: 'Montserrat', sans-serif;
+	border: none;
+	border: 1px solid transparent;
+	transition: all 150ms ease-in;
+}
+
+.price-box-actions button:hover {
+	background-color: lightblue;
+	border: 1px solid black;
+}
+
+.price-box-buynow {
+	font-weight: bold;
+	background-color: dimgray;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { capitalize } from '../../utils/StringUtils';
 import { isObjectEmpty } from '../../utils/ObjectUtils';
-import { Option, Stars, Reviews } from './product-components';
+import { Option, Stars, Reviews, PriceBox } from './product-components';
 import './product-page.css';
 
 
@@ -52,6 +52,7 @@ export default class ProductPage extends Component {
 					</div>
 					{this.renderOptions()}
 					<p>{info.description}</p>
+					<PriceBox value={info.price} />
 				</article>
 			)
 			: null;
