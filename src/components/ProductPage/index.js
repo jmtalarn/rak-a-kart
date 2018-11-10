@@ -1,7 +1,7 @@
 import ProductPage from './product-page';
 import { connect } from 'react-redux';
 import { selectOption } from '../../actions/product';
-import { addProduct } from '../../actions/cart';
+import { addProduct, toggleCart } from '../../actions/cart';
 
 const ProductPageState = function (state, props) {
 	const { product } = state;
@@ -18,6 +18,10 @@ const ProductPageDispatch = function (dispatch) {
 		},
 		addProduct: (id, selectedOptions) => {
 			dispatch(addProduct(id, selectedOptions));
+		},
+		buyNow: (id, selectedOptions) => {
+			dispatch(addProduct(id, selectedOptions));
+			dispatch(toggleCart());
 		}
 
 	};
