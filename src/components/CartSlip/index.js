@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 const CartSlipState = function (state, props) {
 	const { cart: { open }
 	} = state;
-	console.log('state', open);
+
 	return {
 		open
 	};

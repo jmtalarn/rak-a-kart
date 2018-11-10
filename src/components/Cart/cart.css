@@ -5,3 +5,48 @@
 .cart h2 {
 	margin: 2rem 1rem;
 }
+
+.summary-product {
+	display: grid;
+	grid-template-areas:
+		"image title price"
+		"image options price";
+	grid-gap: 10px;
+	padding: 2rem;
+
+}
+
+.summary-product-title {
+	grid-area: title;
+	margin: 0;
+}
+
+.summary-product-image {
+	width: 10rem;
+	height: 10rem;
+	grid-area: image;
+}
+
+.summary-product-option {
+	line-height: 2rem;
+	display: flex;
+}
+
+.summary-product-options {
+	grid-area: options;
+}
+
+.summary-product-option-key {
+	font-weight: bold;
+}
+
+.summary-product-option-value {
+	margin: 0 .5rem;
+}
+
+.summary-product-price {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 2rem;
+	grid-area: price;
+}

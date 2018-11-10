@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import ProductPage from './components/ProductPage';
 import CartSlip from './components/CartSlip';
-import Cart from './components/Cart/cart';
+import Cart from './components/Cart';
 
 class App extends Component {
 	render() {
