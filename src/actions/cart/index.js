@@ -11,10 +11,12 @@ export function toggleCart() {
 export function addProduct(id, selectedOptions) {
 
 	return dispatch => {
-		const product = products.find(product => product.id === id);
+		let product = Object.assign({}, products.find(product => product.id === id));
+		const options = {};
 		for (let [ key, value ] of Object.entries(selectedOptions)) {
-			product.options[ key ] = value;
+			options[ key ] = value;
 		}
+		product = Object.assign({}, product, { options });
 		dispatch({
 			type: ACTION.ADD_PRODUCT,
 			product,

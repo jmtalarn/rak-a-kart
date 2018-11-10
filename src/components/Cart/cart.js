@@ -21,7 +21,7 @@ export default class Cart extends Component {
 			removeProduct={this.removeProduct}
 		/>;
 		return (
-			<div class="cart">
+			<div className="cart">
 				<h2>Your order </h2>
 				<hr />
 				<Tabs

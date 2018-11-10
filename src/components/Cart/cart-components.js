@@ -1,4 +1,5 @@
 import React from 'react';
+import { capitalize } from '../../utils/StringUtils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const CartSummaryProduct = ({ item, removeProduct }) => {
@@ -20,13 +21,15 @@ const CartSummaryProduct = ({ item, removeProduct }) => {
 					{
 						Object.entries(item.options).map(
 							([ key, value ], idx) => (
-								<div
-									className="summary-product-option"
-									key={idx}
-								>
-									<div className="summary-product-option-key">{key}</div>
-									<div className="summary-product-option-value">{value}</div>
-								</div>
+								value ?
+									<div
+										className="summary-product-option"
+										key={idx}
+									>
+										<div className="summary-product-option-key">{capitalize(key)}</div>
+										<div className="summary-product-option-value">{value}</div>
+									</div>
+									: null
 							)
 						)
 					}
