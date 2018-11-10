@@ -3,18 +3,18 @@ import './utils/FontAwesome.init';
 import './App.css';
 import Header from './components/Header';
 import ProductPage from './components/ProductPage';
-import products from './data/products.json';
+import CartSlip from './components/CartSlip';
 
 class App extends Component {
-  render() {
-    const product = products[ 0 ];
-    return (
-      <div className="App">
-        <Header />
-        <ProductPage product={product} />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="App">
+				<Header />
+				<ProductPage />
+				<CartSlip />
+			</div>
+		);
+	}
 }
 
 export default App;

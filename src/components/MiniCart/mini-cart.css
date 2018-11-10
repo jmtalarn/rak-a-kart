@@ -1,0 +1,7 @@
+.mini-cart {
+	transition: all 150ms ease-in;
+}
+
+.mini-cart:hover {
+	background-color: lightblue;
+}

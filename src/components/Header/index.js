@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../logo.png';
 import './header.css';
 import Search from '../Search';
-
+import MiniCart from '../MiniCart';
 
 export default class Header extends Component {
 	render() {
@@ -11,9 +11,7 @@ export default class Header extends Component {
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<Search />
-				<div className="minicart">
-					<FontAwesomeIcon icon="shopping-cart" />
-				</div>
+				<MiniCart />
 
 
 			</header>

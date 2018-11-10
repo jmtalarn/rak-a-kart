@@ -1,7 +1,7 @@
 import * as ActionTypes from '../../actions/cart/types';
 
 const initialState = {
-	opened: false,
+	open: false,
 	items: []
 };
 
@@ -11,7 +11,7 @@ function cartReducer(state = initialState, action) {
 			return Object.assign(
 				{},
 				state,
-				{ opened: !state.opened }
+				{ open: !state.open }
 			);
 
 		default:
@@ -19,5 +19,5 @@ function cartReducer(state = initialState, action) {
 	}
 }
 
-export default productReducer;
+export default cartReducer;
 
