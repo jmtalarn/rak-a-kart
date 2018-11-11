@@ -52,7 +52,7 @@ export default class Tabs extends Component {
 				className={`tab-button${this.state.selected === index ? ' selected' : ''}`}
 				onClick={() => { this.changeTab(index); }}
 			>
-				{index}
+				{index + 1}
 			</button>);
 	}
 	render() {

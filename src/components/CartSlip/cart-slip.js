@@ -17,7 +17,7 @@ export default class CartSlip extends Component {
 	}
 	render() {
 		const { open, children } = this.props;
-		console.log('open', this.props);
+
 		return (
 			<div className={`cart-slip${open ? ' open' : ''}`}>
 				<button

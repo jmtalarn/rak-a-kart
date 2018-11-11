@@ -10,6 +10,7 @@ export default class Cart extends Component {
 		super(props);
 		this.removeProduct = this.removeProduct.bind(this);
 		this.updateInfoField = this.updateInfoField.bind(this);
+
 	}
 	removeProduct(id) {
 		const { removeProduct } = this.props;
@@ -20,20 +21,25 @@ export default class Cart extends Component {
 		updateInfoField(name, value);
 	}
 	render() {
-		const { items } = this.props;
+		const { items, suggestedCities, searchCity, info } = this.props;
 
-		const summary = <CartSummary
+		const summaryComponent = <CartSummary
 			items={items}
 			removeProduct={this.removeProduct}
 		/>;
-		const info = <ShippingInfo updateInfoField={this.updateInfoField} />;
+		const infoComponent = <ShippingInfo
+			updateInfoField={this.updateInfoField}
+			searchCity={searchCity}
+			info={info}
+			suggestedCities={suggestedCities}
+		/>;
 		return (
 			<div className="cart">
 				<h2>Your order </h2>
 				<hr />
 				<Tabs
-					summary={summary}
-					info={info}
+					summary={summaryComponent}
+					info={infoComponent}
 					payment={null}
 				/>
 				<hr />

@@ -15,6 +15,7 @@ const initialState = {
 			cp: ''
 		}
 	},
+	suggestedCities: [],
 	items: []
 };
 
@@ -40,7 +41,6 @@ function cartReducer(state = initialState, action) {
 			);
 		case ActionTypes.UPDATE_INFO_FIELD:
 
-			console.log(action);
 			const [ block, property ] = action.name.split(".");
 			const info = Object.assign(
 				{},
@@ -58,6 +58,12 @@ function cartReducer(state = initialState, action) {
 				{},
 				state,
 				{ info }
+			);
+		case ActionTypes.SET_SUGGESTED_CITIES:
+			return Object.assign(
+				{},
+				state,
+				{ suggestedCities: action.suggestedCities }
 			);
 		default:
 			return state;

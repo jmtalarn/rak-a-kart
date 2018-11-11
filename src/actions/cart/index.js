@@ -1,5 +1,6 @@
 import * as ACTION from './types';
 import products from '../../data/products.json';
+import fetchJsonp from 'fetch-jsonp';
 
 export function toggleCart() {
 	return {
@@ -8,6 +9,21 @@ export function toggleCart() {
 
 }
 
+export function searchCity(text) {
+	return dispatch => {
+
+		if (text.length >= 3) {
+			return fetchJsonp(`http://gd.geobytes.com/AutoCompleteCity?q=${text}`)
+				.then((response) => response.json())
+				.then(function (json) {
+					return dispatch({
+						type: ACTION.SET_SUGGESTED_CITIES,
+						suggestedCities: json,
+					});
+				});
+		}
+	};
+}
 export function addProduct(id, selectedOptions) {
 
 	return dispatch => {

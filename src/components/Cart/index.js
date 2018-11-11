@@ -1,12 +1,14 @@
 import Cart from './cart';
 import { connect } from 'react-redux';
-import { removeProduct, updateInfoField } from '../../actions/cart';
+import { removeProduct, updateInfoField, searchCity } from '../../actions/cart';
 
 const CartState = function (state, props) {
-	const { cart: { items } } = state;
+	const { cart: { items, suggestedCities, info } } = state;
 
 	return {
-		items
+		items,
+		info,
+		suggestedCities,
 	};
 };
 
@@ -17,6 +19,9 @@ const CartDispatch = function (dispatch) {
 		},
 		updateInfoField: (name, value) => {
 			dispatch(updateInfoField(name, value));
+		},
+		searchCity: (text) => {
+			dispatch(searchCity(text));
 		}
 	};
 };
