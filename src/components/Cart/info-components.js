@@ -61,7 +61,15 @@ const Shipping = ({ updateInfoField, searchCity, suggestedCities, shippingInfo }
 					type="text" name="shipping.country" placeholder="p.e. Italy"
 					value={shippingInfo.country}
 					onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value.trim()); }}
+					list="countries_suggested"
 				/>
+				<datalist id="countries_suggested">
+					<option value="Japan">Japan</option>
+					<option value="Spain">Spain</option>
+					<option value="France">France</option>
+					<option value="United States">United States</option>
+					<option value="United Kingdom">United Kingdom</option>
+				</datalist>
 			</label>
 			<label className="half">
 				<span className="label">City</span>

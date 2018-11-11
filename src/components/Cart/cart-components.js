@@ -65,7 +65,7 @@ export const ShippingCosts = ({ shippingCost }) => {
 			<div className="label">Shipping cost</div>
 			<div className="value">
 				{Boolean(shippingCost) && Boolean(shippingCost.shipping) ? shippingCost.shipping.toFixed(2) : 0}
-				{Boolean(shippingCost) && shippingCost.currency || '€'}
+				{Boolean(shippingCost) && shippingCost.currency ? shippingCost.currency : '€'}
 			</div>
 		</div>
 
