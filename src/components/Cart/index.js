@@ -1,6 +1,6 @@
 import Cart from './cart';
 import { connect } from 'react-redux';
-import { removeProduct } from '../../actions/cart';
+import { removeProduct, updateInfoField } from '../../actions/cart';
 
 const CartState = function (state, props) {
 	const { cart: { items } } = state;
@@ -14,6 +14,9 @@ const CartDispatch = function (dispatch) {
 	return {
 		removeProduct: (id) => {
 			dispatch(removeProduct(id));
+		},
+		updateInfoField: (name, value) => {
+			dispatch(updateInfoField(name, value));
 		}
 	};
 };

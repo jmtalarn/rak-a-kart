@@ -32,4 +32,10 @@ export function removeProduct(id) {
 	};
 
 };
+export function updateInfoField(name, value) {
+	return {
+		type: ACTION.UPDATE_INFO_FIELD,
+		name, value,
+	};
+}
 
