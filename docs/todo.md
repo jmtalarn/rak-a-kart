@@ -10,6 +10,6 @@
 * [X] Show order summary
 * [X] Show info form
 * [X] Show payment info
-* [ ] Sent payment
-* [ ] Show Thank you!
+* [X] Sent payment
+* [X] Show Thank you!
 

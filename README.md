@@ -7,6 +7,11 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
+
+>Also runs `concurrently` a dummy backend endpoint to simulate the payment procedure.
+
+>The backend runs on port 3001 by default and it is properly configured in the `package.json` file to be proxied by the React frontend app.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
