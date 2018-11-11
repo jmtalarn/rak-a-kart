@@ -16,7 +16,8 @@ export const PaymentInfo = ({ updateInfoField, info }) => {
 				<label className="full">
 					<span className="label">Card number</span>
 					<input
-						type="text" name="payment.cardnumber" placeholder="p.e. 0000000000000000" required
+						type="text" name="payment.cardnumber" placeholder="p.e. 0000000000000000"
+						pattern="[0-9]{16}" required
 						value={info.payment.cardnumber} maxLength={16} minLength={16}
 						onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value); }}
 					/>
@@ -24,7 +25,8 @@ export const PaymentInfo = ({ updateInfoField, info }) => {
 				<label className="half">
 					<span className="label">Expiration date</span>
 					<input
-						type="date" name="payment.expirationdate" placeholder="p.e. 07/08/2021" required
+						type="month" name="payment.expirationdate"
+						required
 						value={info.payment.expirationdate}
 						onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value); }}
 					/>

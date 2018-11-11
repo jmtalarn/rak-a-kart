@@ -40,7 +40,7 @@ const Info = ({ updateInfoField, personalInfo }) => {
 			<label className="full">
 				<span className="label">Mail address</span>
 				<input
-					type="text" name="personal.email" placeholder="p.e. john.doe@thedoes.com"
+					type="email" name="personal.email" placeholder="p.e. john.doe@thedoes.com"
 					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
 					value={personalInfo.email}
 					onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value); }}

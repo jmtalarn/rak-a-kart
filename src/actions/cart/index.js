@@ -88,7 +88,7 @@ export function sendPayment(cart) {
 					response: json,
 				});
 				setTimeout(
-					() => dispatch({
+					() => dispatch({  
 						type: ACTION.RESET,
 					})
 					, 5000

@@ -21,7 +21,7 @@ var router = express.Router();
 
 
 router.post('/payment', function (req, res) {
-	console.log(req.body);
+
 	const name = req.body.info.personal.name;
 	const items = req.body.items;
 	const country = req.body.info.shipping.country;
