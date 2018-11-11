@@ -58,23 +58,34 @@ export const CartSummary = ({ items, removeProduct }) => {
 	);
 };
 
-export const ShippingCosts = () => {
+export const ShippingCosts = ({ shippingCost }) => {
 
 	return (
 		<div className="shipping-costs">
 			<div className="label">Shipping cost</div>
-			<div className="value">0 €</div>
+			<div className="value">
+				{Boolean(shippingCost) && Boolean(shippingCost.shipping) ? shippingCost.shipping.toFixed(2) : 0}
+				{Boolean(shippingCost) && shippingCost.currency || '€'}
+			</div>
 		</div>
 
 	);
 };
 
 
-export const TotalPrice = ({ items }) => {
+export const TotalPrice = ({ items, shippingCost }) => {
 	let value = 0;
 	for (let i = 0; i < items.length; i++) {
 		value += parseFloat(items[ i ].price);
 	}
+	if (Boolean(shippingCost)) {
+		if (shippingCost.currency === '€') {
+			value += shippingCost.shipping;
+		} else if (shippingCost.currency === '£') {
+			value += (shippingCost.shipping * 1.15);
+		}
+	}
+
 	value = value.toFixed(2);
 
 	return (

@@ -1,5 +1,7 @@
 import * as ACTION from './types';
 import products from '../../data/products.json';
+import shipping from '../../data/shipping.json';
+
 import fetchJsonp from 'fetch-jsonp';
 
 export function toggleCart() {
@@ -49,9 +51,22 @@ export function removeProduct(id) {
 
 };
 export function updateInfoField(name, value) {
-	return {
-		type: ACTION.UPDATE_INFO_FIELD,
-		name, value,
+	return dispatch => {
+		dispatch(
+			{
+				type: ACTION.UPDATE_INFO_FIELD,
+				name,
+				value,
+			});
+		console.log(name, value, "UPDATING SHIPPING COST");
+		if (name === 'shipping.country') {
+
+			dispatch({
+				type: ACTION.UPDATE_SHIPPING_COST,
+				shippingCost: shipping[ value.toUpperCase() ],
+			});
+		}
+
 	};
 }
 

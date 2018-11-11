@@ -15,6 +15,7 @@ const initialState = {
 			cp: ''
 		}
 	},
+	shippingCost: {},
 	suggestedCities: [],
 	items: []
 };
@@ -58,6 +59,12 @@ function cartReducer(state = initialState, action) {
 				{},
 				state,
 				{ info }
+			);
+		case ActionTypes.UPDATE_SHIPPING_COST:
+			return Object.assign(
+				{},
+				state,
+				{ shippingCost: action.shippingCost }
 			);
 		case ActionTypes.SET_SUGGESTED_CITIES:
 			return Object.assign(

@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { removeProduct, updateInfoField, searchCity } from '../../actions/cart';
 
 const CartState = function (state, props) {
-	const { cart: { items, suggestedCities, info } } = state;
-
+	const { cart: { items, suggestedCities, info, shippingCost } } = state;
+	console.log(state);
 	return {
 		items,
 		info,
+		shippingCost,
 		suggestedCities,
 	};
 };

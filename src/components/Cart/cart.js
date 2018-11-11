@@ -21,8 +21,8 @@ export default class Cart extends Component {
 		updateInfoField(name, value);
 	}
 	render() {
-		const { items, suggestedCities, searchCity, info } = this.props;
-
+		const { items, suggestedCities, searchCity, info, shippingCost } = this.props;
+	
 		const summaryComponent = <CartSummary
 			items={items}
 			removeProduct={this.removeProduct}
@@ -43,9 +43,9 @@ export default class Cart extends Component {
 					payment={null}
 				/>
 				<hr />
-				<ShippingCosts />
+				<ShippingCosts shippingCost={shippingCost} />
 				<hr />
-				<TotalPrice items={items} />
+				<TotalPrice items={items} shippingCost={shippingCost} />
 				<hr />
 			</div>
 		);

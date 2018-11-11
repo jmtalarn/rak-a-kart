@@ -72,7 +72,6 @@ const Shipping = ({ updateInfoField, searchCity, suggestedCities, shippingInfo }
 						searchCity(evt.target.value.trim());
 					}}
 					onInput={(evt) => {
-						console.log(evt.target.value);
 						const [ city, , country ] = evt.target.value.split(",");
 						if (Boolean(country)) { updateInfoField("shipping.country", country.trim()); }
 						if (Boolean(city)) { updateInfoField("shipping.city", city.trim()); }
