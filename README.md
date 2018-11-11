@@ -1,4 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## TL; DR
+Type 
+```yarn install && yarn start```
+or
+```npm install && npm start```
+ on your command line to run the project.
 
 ## Available Scripts
 
