@@ -13,6 +13,7 @@ export default class Tabs extends Component {
 		this.setState({ selected: tab });
 	}
 	renderStepper() {
+		const { finalStep } = this.props;
 		const prevButton = this.state.selected > 0 ?
 			<button
 				className="step prev-step"
@@ -36,7 +37,7 @@ export default class Tabs extends Component {
 							this.changeTab(this.state.selected + 1);
 						}
 						else {
-							alert('Submit payment');
+							finalStep();
 						}
 					}}
 				>

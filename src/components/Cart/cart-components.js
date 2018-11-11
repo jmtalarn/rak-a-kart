@@ -50,7 +50,7 @@ export const CartSummary = ({ items, removeProduct }) => {
 				<CartSummaryProduct
 					key={idx}
 					item={item}
-					removeProduct={removeProduct}
+					removeProduct={() => { removeProduct(idx); }}
 				/>
 			)}
 		</div>

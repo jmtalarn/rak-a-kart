@@ -8,8 +8,8 @@
 ### On Cart
 * [X] Toggle cart
 * [X] Show order summary
-* [ ] Show info form
-* [ ] Show payment info
+* [X] Show info form
+* [X] Show payment info
 * [ ] Sent payment
 * [ ] Show Thank you!
 

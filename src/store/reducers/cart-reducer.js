@@ -13,8 +13,15 @@ const initialState = {
 			city: '',
 			address: '',
 			cp: ''
+		},
+		payment: {
+			name: '',
+			cardnumber: '',
+			expirationdate: '',
+			cvv: ''
 		}
 	},
+	thankyou: {},
 	shippingCost: {},
 	suggestedCities: [],
 	items: []
@@ -38,7 +45,7 @@ function cartReducer(state = initialState, action) {
 			return Object.assign(
 				{},
 				state,
-				{ items: state.items.filter(item => item.id !== action.id) }
+				{ items: [ ...state.items.slice(0, action.index), ...state.items.slice(action.index + 1) ] }
 			);
 		case ActionTypes.UPDATE_INFO_FIELD:
 
@@ -72,6 +79,13 @@ function cartReducer(state = initialState, action) {
 				state,
 				{ suggestedCities: action.suggestedCities }
 			);
+		case ActionTypes.THANK_YOU:
+			return Object.assign(
+				{},
+				state,
+				{ thankyou: action.response });
+		case ActionTypes.RESET:
+			return initialState;
 		default:
 			return state;
 	}

@@ -24,7 +24,7 @@ const Info = ({ updateInfoField, personalInfo }) => {
 			<label className="half">
 				<span className="label">Name</span>
 				<input
-					type="text" name="personal.name" placeholder="p.e. John"
+					type="text" name="personal.name" placeholder="p.e. John" required
 					value={personalInfo.name}
 					onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value); }}
 				/>
@@ -32,7 +32,7 @@ const Info = ({ updateInfoField, personalInfo }) => {
 			<label className="half">
 				<span className="label">Surname</span>
 				<input
-					type="text" name="personal.surname" placeholder="p.e. Doe"
+					type="text" name="personal.surname" placeholder="p.e. Doe" required
 					value={personalInfo.surname}
 					onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value); }}
 				/>
@@ -41,6 +41,7 @@ const Info = ({ updateInfoField, personalInfo }) => {
 				<span className="label">Mail address</span>
 				<input
 					type="text" name="personal.email" placeholder="p.e. john.doe@thedoes.com"
+					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
 					value={personalInfo.email}
 					onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value); }}
 				/>
@@ -58,7 +59,7 @@ const Shipping = ({ updateInfoField, searchCity, suggestedCities, shippingInfo }
 			<label className="half">
 				<span className="label">Country</span>
 				<input
-					type="text" name="shipping.country" placeholder="p.e. Italy"
+					type="text" name="shipping.country" placeholder="p.e. Italy" required
 					value={shippingInfo.country}
 					onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value.trim()); }}
 					list="countries_suggested"
@@ -74,7 +75,7 @@ const Shipping = ({ updateInfoField, searchCity, suggestedCities, shippingInfo }
 			<label className="half">
 				<span className="label">City</span>
 				<input
-					type="text" name="shipping.city" placeholder="p.e. Rome"
+					type="text" name="shipping.city" placeholder="p.e. Rome" required
 					value={shippingInfo.city}
 					onChange={(evt) => {
 						searchCity(evt.target.value.trim());
@@ -101,7 +102,7 @@ const Shipping = ({ updateInfoField, searchCity, suggestedCities, shippingInfo }
 			<label className="threequarters">
 				<span className="label">Address</span>
 				<input
-					type="text" name="shipping.address" placeholder="p.e. Via della felicità"
+					type="text" name="shipping.address" placeholder="p.e. Via della felicità" required
 					value={shippingInfo.address}
 					onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value.trim()); }}
 				/>
@@ -109,7 +110,7 @@ const Shipping = ({ updateInfoField, searchCity, suggestedCities, shippingInfo }
 			<label className="quarter" >
 				<span className="label">CP</span>
 				<input
-					type="text" name="shipping.cp" placeholder="p.e. 08080"
+					type="text" name="shipping.cp" placeholder="p.e. 08080" required
 					value={shippingInfo.cp}
 					onChange={(evt) => { updateInfoField(evt.target.name, evt.target.value.trim()); }}
 				/>

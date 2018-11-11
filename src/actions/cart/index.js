@@ -42,11 +42,11 @@ export function addProduct(id, selectedOptions) {
 		);
 	};
 }
-export function removeProduct(id) {
+export function removeProduct(index) {
 
 	return {
 		type: ACTION.REMOVE_PRODUCT,
-		id,
+		index,
 	};
 
 };
@@ -69,4 +69,31 @@ export function updateInfoField(name, value) {
 
 	};
 }
+
+export function sendPayment(cart) {
+	return dispatch => {
+		console.log("SEND PAYMENT");
+		return fetch(`/api/payment/`,
+			{
+				method: 'POST',
+				headers: {
+					"Content-Type": "application/json; charset=utf-8",
+				},
+				body: JSON.stringify(cart)
+			})
+			.then((response) => response.json())
+			.then((json) => {
+				dispatch({
+					type: ACTION.THANK_YOU,
+					response: json,
+				});
+				setTimeout(
+					() => dispatch({
+						type: ACTION.RESET,
+					})
+					, 5000
+				);
+			});
+	};
+};
 
